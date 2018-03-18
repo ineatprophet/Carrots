@@ -1,0 +1,16 @@
+Full skill tree for CARROTS
+
+[knowledge]
+BOTANY 
+-SMALL PLANTS
+--FOOD PRODUCING
+---ROOT VEGETABLES
+----CARROTS
+
+
+[actions]
+SOWING
+HARVESTING
+INSPECTING* later. This will take a lot of work.
+GATHERING SEED
+
