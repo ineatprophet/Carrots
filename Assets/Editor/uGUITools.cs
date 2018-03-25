@@ -1,6 +1,8 @@
 ﻿using UnityEditor;
 using UnityEngine;
-
+/// <summary>
+/// Borrowed bit of code from the Unity forums. This allows for easy setting of anchors to corners (or vice versa) via a command shortcut. 
+/// </summary>
 public class uGUITools : MonoBehaviour {
 	[MenuItem("uGUI/Anchors to Corners %[")]
 	static void AnchorsToCorners(){

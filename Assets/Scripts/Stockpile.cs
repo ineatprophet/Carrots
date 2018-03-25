@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class Stockpile : MonoBehaviour {
 
+    /// <summary>
+    /// Unnecessary script. Should be combined with GlobalVars. 
+    /// </summary>
     public Text carrotCount;
     public Text rabbitCount;
 

@@ -5,20 +5,13 @@ using UnityEngine.UI;
 
 
 public class Plot : MonoBehaviour {
-
+    /// <summary>
+    /// Primarily this class is concerned with displaying the status of the plots in the farm. 
+    /// </summary>
     public GameObject thisPlot;
 
-    public int localCarrots;
-
-    public enum DirtState { Barren, Worked, InUse };
-    DirtState currentState = DirtState.Barren;
+    public int localCarrots; // this should be generalized. Probably reference a custom class called Resources or similar that contains information about the contents of the plot.
     public Color initialColor;
-
-    public void SetDirtState(DirtState state) //to be used by Grow, Harvest, and Till eventually
-    {
-        currentState = state;
-    }
-
 
     private void Start()
     {
@@ -49,7 +42,6 @@ public class Plot : MonoBehaviour {
                 takenPlots.Add(farmer.GetComponent<Farmer>().currentPlot);
             }
         }
-        Debug.Log("This many spots are taken: " + takenPlots.Count);
 
         if (takenPlots.Contains(thisPlot)) //Check to make sure plot is available
         {
@@ -70,10 +62,8 @@ public class Plot : MonoBehaviour {
             Farmer farmerRef = farmer.GetComponent<Farmer>();
             if(farmerRef.currentPlot != null)
             {
-                farmerRef.currentPlot.GetComponentInChildren<Image>().color = farmerRef.myColor; // set colors for each plot with a farmer
+                farmerRef.currentPlot.GetComponentInChildren<Image>().color = farmerRef.myColor; // set colors for each plot with a farmer according to their personal color.
             }
-            
         }
-  
     }
 }

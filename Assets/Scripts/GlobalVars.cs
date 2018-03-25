@@ -4,7 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class GlobalVars : MonoBehaviour {
-
+    /// <summary>
+    /// like the name implies, this is for the collection of global variables and methods
+    /// </summary>
     public static GameObject activeFarmer;
     public static int carrotStockpile;
     public static int currentTurn;
@@ -17,9 +19,8 @@ public class GlobalVars : MonoBehaviour {
         skillbarControllers = GameObject.FindGameObjectWithTag("GameController").GetComponent<SkillBarAccess>().skillbarControllers;
     }
 
-    public static void GameOverTrigger()
+    public static void GameOverTrigger() // Change scenes to the Game Over scene
     {
-        //Application.LoadLevel("Game Over");
         SceneManager.LoadScene("Game Over");
     }
 

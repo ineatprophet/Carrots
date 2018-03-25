@@ -4,8 +4,8 @@ using UnityEngine;
 
 public static class Rabbits {
 
-    public static int previousRabbits = 1;
-    public static int currentRabbits = 2;
+    public static int previousRabbits = 1; //initial values for fib sequence
+    public static int currentRabbits = 2; // ^^
 
     public static void Breed() //increase rabbit count via Fibonacci sequence
     {
