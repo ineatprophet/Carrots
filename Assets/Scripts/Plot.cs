@@ -50,6 +50,7 @@ public class Plot : MonoBehaviour {
         else
         {
             GlobalVars.activeFarmer.GetComponent<Farmer>().currentPlot = this.gameObject; // if available, set the active farmer to this plot
+            GlobalVars.activeFarmer.GetComponent<Farmer>().queuedAction = GlobalVars.actionDropdown.GetComponent<Dropdown>().value;// Stores the dropdown value in the Farmer script so the Dropdown can be set to this later.
         }
 
         foreach (GameObject plot in GameObject.FindGameObjectsWithTag("plot")) // cycle through each plot

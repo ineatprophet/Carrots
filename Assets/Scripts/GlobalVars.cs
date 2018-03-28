@@ -8,9 +8,11 @@ public class GlobalVars : MonoBehaviour {
     /// like the name implies, this is for the collection of global variables and methods
     /// </summary>
     public static GameObject activeFarmer;
+    public static GameObject actionDropdown;
     public static int carrotStockpile;
     public static int currentTurn;
     public static int rabbitCount;
+
 
     public static List<GameObject> skillbarControllers; //static reference to the whole collection of skillbars
 

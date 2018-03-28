@@ -31,13 +31,6 @@ public class SkillBarController : MonoBehaviour {
 
     public SkillSheet skillSheet;
 
-    // Update is called once per frame
-    private void Start()
-    {
-        //Debug.Log(mySkillName);
-        //InitializeSkillbar();
-    }
-
     void Update () {
         if(targetSkill == null) // If a farmer hasn't been selected.
         {
@@ -52,7 +45,6 @@ public class SkillBarController : MonoBehaviour {
         {
             Debug.Log("targetSkill.skillName is Null");
         }
-
         UpdateSkillbar();
 	}
 
@@ -80,8 +72,6 @@ public class SkillBarController : MonoBehaviour {
         lowerLimit = targetSkill.lowBound;
         upperLimit = targetSkill.highBound;
         skillBarCenter = targetSkill.skillValue;
-        
-
     }
 
     public void InitializeSkillbar() //called by clicking farmer portrait
@@ -92,9 +82,9 @@ public class SkillBarController : MonoBehaviour {
         {
             if(skill.skillName == mySkillName)
             {
-                Debug.Log("Found match. Linking " + skill.ToString() + " with value " + skill.skillValue.ToString() + " to " + this.ToString());
+                //Debug.Log("Found match. Linking " + skill.ToString() + " with value " + skill.skillValue.ToString() + " to " + this.ToString());
                 targetSkill = skill;
-                Debug.Log(targetSkill.ToString());
+                //Debug.Log(targetSkill.ToString());
                 break;
             }
         }

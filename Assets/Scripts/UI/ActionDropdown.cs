@@ -12,7 +12,17 @@ public class ActionDropdown : MonoBehaviour {
         Debug.Log(action + " selected.");
     }
 
+    private void Awake()
+    {
+        GlobalVars.actionDropdown = this.gameObject;
+    }
+
+    public int SetFarmerQueue()
+    {
+        return this.gameObject.GetComponent<Dropdown>().value; 
+    }
 
 
-    
+
+
 }

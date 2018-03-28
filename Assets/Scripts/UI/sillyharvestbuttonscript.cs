@@ -36,24 +36,25 @@ public class sillyharvestbuttonscript : MonoBehaviour
     }
 
 
-    //  When the GO button is pressed, determine which enum is selected and go from there.
+    //  When the GO button is pressed, determine which action is selected and go from there.
+    // This only runs once. Need to update it to run for each Farmer.
     public void TriggerAction()
     {
-        switch (actionDropdown.GetComponentInChildren<Text>().text)
+        switch (actionDropdown.value)
         {
-            case "Harvest":
+            case 0:
                 TriggerHarvest();
                 Rabbits.Breed();
                 Rabbits.Feed();
                 GlobalVars.currentTurn += 1;
                 break;
-            case "Plant":
+            case 1:
                 Debug.Log("Plant stub");
                 break;
-            case "Gather Seed":
+            case 2:
                 Debug.Log("Gather Seed stub");
                 break;
-            case "Inspect":
+            case 3:
                 Debug.Log("Inspect stub");
                 break;
 

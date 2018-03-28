@@ -10,10 +10,14 @@ public class Portrait : MonoBehaviour {
     {
         GlobalVars.activeFarmer = linkedFarmer;
         GameObject.FindGameObjectWithTag("portrait_title").GetComponent<Text>().text = ("Current Farmer: " + linkedFarmer.GetComponent<Farmer>().farmerName);
-        Debug.Log(GlobalVars.activeFarmer.ToString() + " is the new active farmer");
+        //Debug.Log(GlobalVars.activeFarmer.ToString() + " is the new active farmer");
         foreach(GameObject sbc in GlobalVars.skillbarControllers)
         {
             sbc.GetComponent<SkillBarController>().InitializeSkillbar();
         }
+
+        // Initialize the Dropdon to the action the Farmer currently has queued
+       GlobalVars.actionDropdown.GetComponent<Dropdown>().value = GlobalVars.activeFarmer.GetComponent<Farmer>().queuedAction;
+        
     }
 }

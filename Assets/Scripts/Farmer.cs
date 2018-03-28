@@ -8,6 +8,11 @@ public class Farmer : MonoBehaviour {
 
     public string farmerName;
     public GameObject currentPlot;
-    public string queuedAction;
+    public int queuedAction;
     public Color myColor;
+
+    private void Awake()
+    {
+        queuedAction = 0; //initialize to first dropdown option
+    }
 }
