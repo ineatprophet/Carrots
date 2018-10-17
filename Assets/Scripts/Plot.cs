@@ -9,18 +9,23 @@ public class Plot : MonoBehaviour {
     /// Primarily this class is concerned with displaying the status of the plots in the farm. 
     /// </summary>
     public GameObject thisPlot;
+    public float plotSize = 1; // size determines maximum amounts of crops. Measured in acres (should we be metric here?)
 
     public int localCarrots; // this should be generalized. Probably reference a custom class called Resources or similar that contains information about the contents of the plot.
     public Color initialColor;
+    public OCarrotCrop myCarrotCrop;
 
     private void Start()
     {
         InitializeCarrots();
     }
 
-    public void InitializeCarrots()
+    public void InitializeCarrots() // placeholder function until we have proper sowing functionality. 
     {
-        localCarrots = Random.Range(0, 100);
+        myCarrotCrop = this.gameObject.AddComponent<OCarrotCrop>();
+        //Debug.Log("Attempting to sow " + myCarrotCrop.maxCarrots + " carrots.");
+        myCarrotCrop.SowCarrots(myCarrotCrop.maxCarrots);
+        localCarrots = myCarrotCrop.TotalCarrots; // placeholder
         GetComponentInChildren<Text>().text = localCarrots.ToString(); //display num of carrots in plot
     }
 
